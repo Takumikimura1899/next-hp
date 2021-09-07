@@ -14,6 +14,16 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "lib/posts.jsx",
+    "pages/blog-page.tsx",
+    "lib/posts.jsx",
+    "lib/posts.jsx",
+    "lib/posts.jsx",
+    "lib/posts.jsx"
+  ],
   "exclude": ["node_modules"]
 }
