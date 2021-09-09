@@ -1,5 +1,4 @@
 import axios from 'axios';
-import postcss from 'postcss';
 export const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 
 export interface Posts {
@@ -19,12 +18,12 @@ export async function getAllPostsData() {
 
 export async function getAllPostIds() {
   const res = await axios.get(apiUrl);
-  const posts = await res.data;
+  const posts: { id: number }[] = await res.data;
 
-  return posts.map((post: { id: string }) => {
+  return posts.map((post) => {
     return {
       params: {
-        id: post.id,
+        id: String(post.id),
       },
     };
   });
@@ -32,11 +31,9 @@ export async function getAllPostIds() {
 
 export async function getPostData(id: string) {
   const res = await axios.get(`${apiUrl}/${id}/`);
-  const post = await res.data;
+  const post: Posts = await res.data;
 
-  return {
-    post,
-  };
+  return post;
 }
 
 // export async function getAllPostsData() {
