@@ -7,8 +7,7 @@ const BlogPage = ({ posts }: any) => {
   return (
     <Layout title='Blog'>
       <ul className='m-10'>
-        {posts &&
-          posts.map((post: Posts) => <Post key={post.id} post={post} />)}
+        {posts && posts.map((post: any) => <Post key={post.id} post={post} />)}
       </ul>
     </Layout>
   );
